@@ -1,39 +1,33 @@
-// Créer 3 ronds de tailles différentes (dont un qui remplacera la souris)
+// const --- = document.querySelector("---");
+// const --- = document.getElementById("---");
+// window.addEventListener("---", () => {----});
 
-// Ajouter un événement sur la fenetre (window) puis animer la position de ces ronds (top, left injecter "e")
-
-// S'assurer que les liens sont clickables
-
-// Donner un style de transparence aux 2 plus gros ronds (mix-blend-mode)
-
-// const mousemove = document.querySelector(".mousemove");
-// window.addEventListener("mousemove", (e) => {
-//   mousemove.style.left = e.pageX + "px";
-//   mousemove.style.top = e.pageY + "px";
+// test
+// window.addEventListener("click", (e) => {
+//   console.log(e);
 // });
-// console.log(left);
-// const cicles = () => {
+// partie a supprimée
 
-const mousemove = document.querySelector(".mousemove");
-const mousemove2 = document.querySelector(".mousemove2");
-const mousemove3 = document.querySelector(".mousemove3");
-console.log(mousemove2);
+let result = document.querySelector(".resultat").textContent;
+let preResult = "";
+const btn = document.querySelectorAll("button");
+const enter = document.getElementById("enter");
 
-window.addEventListener("mousemove", (e) => {
-  mousemove.style.left = e.pageX + "px";
-  mousemove.style.top = e.pageY + "px";
+
+btn.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    let resultFinal = "";
+    const texteBoutonClique = event.target.textContent;
+
+    if (texteBoutonClique === "enter") {
+      event.preventDefault();
+      resultFinal = eval(preResult);
+      document.querySelector(".resultat").textContent = resultFinal;
+    } else if (texteBoutonClique === "del") {
+      
+    } else {
+      preResult += texteBoutonClique;
+      document.querySelector(".resultat").textContent = preResult;
+    }
+  });
 });
-
-window.addEventListener("mousemove", (e) => {
-  mousemove2.style.left = e.pageX + "px";
-  mousemove2.style.top = e.pageY + "px";
-
-
-});
-
-window.addEventListener("mousemove", (e) => {
-  mousemove3.style.left = e.pageX + "px";
-  mousemove3.style.top = e.pageY + "px";
-});
-
-// };
